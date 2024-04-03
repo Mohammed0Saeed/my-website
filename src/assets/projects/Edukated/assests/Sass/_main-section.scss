@@ -1,0 +1,729 @@
+@import "../Sass/mixins";
+@import "../Sass/resetting";
+@import "../Sass/variables";
+
+// responsive settings
+
+
+
+main{
+    overflow-x: hidden;
+    .responsive-header{
+
+        @include flex(center, space-around, row);
+        height: 6rem;
+        width: 100%;
+        position: relative;
+        @media (min-width: 951px){
+            display: none;
+        }
+
+        .manu{
+            width: 40%;
+            @include flex(center, center, row);
+            &:checked ~ .hidden-manu{
+                display: inherit;
+            }
+            .burger{
+                display: none;
+                @media (max-width: 950px) {
+                    display: block;
+                }
+                .line1, .line2, .line3{
+                    width: 2rem;
+                    height: 0.25rem;
+                    margin: 0.25rem 0;
+                    border-radius: 1rem;
+                    background-color: $linkColor;
+                }
+            }
+            .hidden-manu{
+                display: block;
+                position: absolute;
+                width: 20rem;
+                height: fit-content;
+                top: 75%;
+                left: 12.5%;
+                border-radius: 1rem;
+                background-color: #fff;
+                z-index: 4;
+                list-style: none;
+                transition: 0.5s ease;
+                transform: translateX(-200%);
+                overflow-x: hidden;
+                li{
+                    font-size: 1rem;
+                    padding: 1rem;
+                    text-transform: capitalize;
+                    font-weight: 600;
+                    border-radius: 1rem;
+                    &:hover{
+                        background-color: #eee;
+                    }
+                }
+            }
+            .hidden-manu-active{
+                transform: translateX(-20%);
+            }
+        }
+        .search{
+            width: 30%;
+            margin: 1.5rem;
+            padding: 1rem;
+            height: 4rem;
+            @include flex(center, center, row);
+            button{
+                width: 2rem;
+                height: 2rem;
+                background: $linkColor;
+                border-radius: 25%;
+                @include flex(center, center, row);
+                img{
+                    width: 1rem;
+                    height: 1rem;
+                    
+                }
+            }
+        }
+
+        .logo{
+            width: 30%;
+            @include flex(center, center, row);
+            img{
+                width: 30%;
+                transform: scale(0.5);
+            }
+            h2{
+                font-size: 1.125rem;
+                font-weight: 700;
+                text-transform: capitalize;
+                letter-spacing: 0.025rem;
+                span{
+                    color: $linkColor;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+    width: 90%;
+    height: fit-content;
+    margin: 0 0 0 20%;
+    @media (max-width: 950px) {
+        margin: 0;
+        width: 100%;
+    }
+    @include flex (center, center, column);
+    gap: 1rem;
+    header{
+        width: 90%;
+        height: fit-content;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        .container-A{
+            width: 60%;
+            @media (max-width: 1200px) {
+                width: 80%;
+            }
+            @media (max-width: 951px){
+                width: 100%;
+            }
+            height: fit-content;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            .title{
+                @include titles;
+            }
+            .authors-stories{
+                width: 100%;
+                height: fit-content;
+                @include flex(center, space-between, row);
+                a{
+                    width: 3rem;
+                    height: 3rem;
+                    border: solid $linkColor 2.5px;
+                    overflow: hidden;
+                    border-radius: 1rem;
+                    @include flex(center, center, row);
+                    transition: 0.5s ease;
+                    img{
+                        transform: translate(-0.5%, 0%) scale(0.9);
+                        border-radius: 1rem;
+                        transition: 0.5s ease;
+                    }
+                    &:hover{
+                        transform: scale(1.1);
+                        @keyframes roundMove{
+                            0%{
+                                border: solid $linkColor 2.5px;
+                            }
+                            50% {
+                                border: solid purple 2.5px;
+                            }
+                            100% {
+                                border: solid $linkColor 2.5px;
+                            }
+                        }
+                        animation: roundMove 5s infinite linear 0s;
+                    }
+                }
+            }
+        }
+        .container-B{
+            width: 30%;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            @media (max-width: 1200px) {
+                display: none;
+            }
+            .title{
+                @include titles;
+            }
+            .search-bar{
+                width: 100%;
+                @include flex(center, space-between, row);
+                height: inherit;
+                input{
+                    height: 3rem;
+                    width: 70%;
+                    padding: 1rem;
+                    border-radius: 1rem;
+                    background-color: $backgroundColor;
+                    color: $textBackgroundColor;
+                }
+                a{
+                    height: 3rem;
+                    width: 4.5rem;
+                    @include flex(center, center, column);
+                    border-radius: 1rem;
+                    background-color: $linkColor;
+                    text-align: center;
+                    color: #fff;
+                    font-size: 1rem;
+                    font-weight: 600;
+                    text-transform: capitalize;
+                    transition: 0.3s ease;
+                    &:hover{
+                        filter: saturate(110%);
+                    }
+                }
+            }
+        }
+        .container-C{
+            @media (min-width: 1200px) {
+                display: none;
+            }
+            @media (max-width: 951px){
+                display: none;
+            }
+            width: 4rem;
+            margin: 1.5rem;
+            padding: 1rem;
+            border-radius: 1rem;
+            background: $linkColor;
+            height: 4rem;
+            @include flex(center, center, row);
+            button{
+                width: 3rem;
+                height: 3rem;
+                background-color: transparent;
+                @include flex(center, center, row);
+                img{
+                    width: 2rem;
+                    height: 2rem;
+                    
+                }
+            }
+        }
+    }
+
+    .popular-now{
+        width: 90%;
+        height: fit-content;
+        display: felx;
+        justify-content: space-between;
+        flex-direction: column;
+        .title{
+            @include titles;
+            margin: 0 0 1rem 0;
+        }
+        .mainCourseSet{
+            width: 100%;
+            height: 25rem;
+            @include flex (center, space-between, row);
+            @media (max-width: 1200px) {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .set1{
+                width: 60%;
+                height: 25rem;
+                @include flex(center, space-between, row);
+                @media (max-width: 1200px) {
+                    width: 100%;
+                }
+                @media (max-width: 530px) {
+                    @include flex(center, space-between, column);
+                    gap: 1rem;
+                    height: 52rem;
+                }
+                .one, .two{
+                    position: relative;
+                    width: 49%;
+                    @media (max-width: 1200px) {
+                        width: 49%;
+                    }
+                    @media (max-width: 530px) {
+                        width: 90%;
+                    }
+                    height: 23rem;
+                    border-radius: 1rem;
+                    overflow: hidden;
+                    transition: 0.5s ease;
+                    cursor: pointer;
+                    img{
+                        position: absolute;
+                        z-index: 1;
+                        transition: 0.5s ease;
+                    }
+
+                    &:hover{
+                        transform: scale(1.0025);
+                        .main-img{
+                            animation: magnifier 30s infinite linear 0s;
+                            @keyframes magnifier{
+                                0%{
+                                    transform: scale(1);
+                                }
+                                100%{
+                                    transform: scale(1.5);
+                                }
+                            }
+                        }
+                    }
+
+                    .tutor{
+                        width: 90%;
+                        height: 20rem;
+                        padding: 1rem 0.5rem;
+                        position: absolute;
+                        z-index: 3;
+                        @include flex(center, space-between, column);
+                        .name{
+                            .author-info{
+                                @include flex (center, space-between, row);
+                                height: 4rem;
+                                width: 100%;
+                                img{
+                                    position: relative;
+                                    width: 3rem;
+                                    height: 3rem;
+                                    border-radius: 1rem;
+                                    margin: 0 0.5rem 0 0;
+                                }
+                                .text-info{
+                                    h3{
+                                        font-size: 1rem;
+                                        color: #fff;
+                                        text-transform: capitalize;
+                                        text-align: center;
+                                    }
+                                    p{
+                                        color: #fff;
+                                        margin-top: -0.5rem;
+                                    }
+                                }
+                            }
+                            .duration{
+                                width: fit-content;
+                                padding: 0.25rem 0.5rem;
+                                border-radius: 0.5rem;
+                                background-color: $linkColor;
+                                color: #fff;
+                                font-size: 0.75rem;
+                                font-weight: 700;
+                                filter: blur(0.25px);
+                            }
+                        }
+                        .description{
+                            width: 80%;
+                            height: fit-content;
+                            border-radius: 1rem;
+                            position: relative;
+                            padding: 1rem;
+                            transform: translate(0.85rem, 2rem) scale(1.2);
+                            .layer{
+                                width: 100%;
+                                height: 100%;
+                                position: absolute;
+                                background-color: #004375;
+                                opacity: 0.8;
+                                border-radius: 1rem;
+                                transform: translate(-1rem, -1rem);
+                            }
+                            p{
+                                color: #fff;
+                                position: relative;
+                                z-index: 2;
+                                font-size: 0.75rem;
+                                text-transform: capitalize;
+                            }
+                        }
+                    }
+                }
+                .one{
+                    &::before{
+                        content: "";
+                        z-index: 2;
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        opacity: 0.75;
+                        background-image: linear-gradient(to bottom, #004375, transparent);
+                    }
+                }
+                .two{
+                    &::before{
+                        content: "";
+                        z-index: 2;
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        opacity: 0.75;
+                        background-image: linear-gradient(to bottom, #76132B, transparent);
+                    }
+                    .tutor{
+                        .description{
+                            .layer{
+                                background-color: #76132B;
+                            }
+                        }
+                    }
+                }
+            }
+            .set2{
+                width: 30%;
+                height: 23rem;
+                display: grid;
+                grid-template-columns: repeat(2, calc(50% - 0.5rem));
+                grid-template-rows: repeat(2, 11rem);
+                column-gap: 1rem;
+                row-gap: 1rem;
+                @media (max-width: 1200px) {
+                    width: 100%;
+                    height: 23rem;
+                    display: grid;
+                    grid-template-columns: repeat(2, calc(50% - 0.5rem));
+                    grid-template-rows: repeat(2, 11rem);
+                    column-gap: 1rem;
+                    row-gap: 1rem;
+                }
+                @media (max-width: 530px) {
+                    width: 90%;
+                    height: 43rem;
+                    display: grid;
+                    grid-template-columns: repeat(1, 100%);
+                    grid-template-rows: repeat(3, 11rem);
+                    row-gap: 1rem;
+                }
+                .box1, .box2, .box3{
+                    border-radius: 1rem;
+                    cursor: pointer;
+                    &:hover{
+                        transform: scale(1.0025);
+                        .main-img{
+                            animation: magnifier 30s infinite linear 0s;
+                            @keyframes magnifier{
+                                0%{
+                                    transform: scale(1);
+                                }
+                                100%{
+                                    transform: scale(1.5);
+                                }
+                            }
+                        }
+                    }
+                }
+                .box1{
+                    grid-column-start: 1;
+                    grid-column-end: 3;
+                    grid-row-start: 1;
+                    grid-row-end: 2;
+                    @media (max-width: 1200px) {
+                        grid-column-start: 1;
+                        grid-column-end: 2;
+                        grid-row-start: 1;
+                        grid-row-end: 3;
+                    }
+                    @media (max-width: 530px) {
+                        grid-column-start: 1;
+                        grid-column-end: 2;
+                        grid-row-start: 1;
+                        grid-row-end: 2;
+                    }
+                    position: relative;
+                    overflow: hidden;
+                    img{
+                        position: absolute;
+                    }
+                    &::before{
+                        content: "";
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        background-image: linear-gradient(to bottom, #611772, transparent);
+                        z-index: 2;
+                        opacity: 0.8;
+                    }  
+                    .content{
+                        padding: 1rem;
+                        @include flex (center, space-between, column);
+                        .name{
+                            width: 100%;
+                            display: flex;
+                            flex-direction: column;
+                            gap: 0.5rem;
+                            position: relative;
+                            z-index: 3;
+                            .content-info{
+                                display: flex;
+                                flex-direction: row;
+                                img{
+                                    position: relative;
+                                    z-index: 3;
+                                    width: 3rem;
+                                    height: 3rem;
+                                    border-radius: 1rem;
+                                    margin: 0 1rem 0 0;
+                                }
+                                .text-info{
+                                    h3{
+                                        font-size: 1rem;
+                                        color: #fff;
+                                        text-transform: capitalize;
+                                        text-align: center;
+                                    }
+                                    p{
+                                        color: #fff;
+                                        margin-top: -0.5rem;
+                                    }
+                                }
+                            }
+                            .duration{
+                                width: fit-content;
+                                padding: 0.25rem 0.5rem;
+                                border-radius: 0.5rem;
+                                background-color: $linkColor;
+                                color: #fff;
+                                font-size: 0.75rem;
+                                font-weight: 700;
+                                filter: blur(0.25px);
+                            }
+                            a{
+                                width: 4rem;
+                                height: fit-content;
+                                padding: 0.5rem 1rem;
+                                position: relative;
+                                z-index: 3;
+                                text-align: center;
+                                color: #fff;
+                                font-size: 0.75rem;
+                                font-weight: 600;
+                                background-color: #611772;
+                                border-radius: 1rem;
+                                bottom: 0.25rem;
+                                right: 0.25rem;
+                                @media (max-width: 1200px) {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                }
+                .box2{
+                    grid-column-start: 1;
+                    grid-column-end: 2;
+                    grid-row-start: 2;
+                    grid-row-end: 3;
+                    @media (max-width: 1200px) {
+                        grid-column-start: 2;
+                        grid-column-end: 3;
+                        grid-row-start: 1;
+                        grid-row-end: 2;
+                    }
+                    @media (max-width: 530px) {
+                        grid-column-start: 1;
+                        grid-column-end: 2;
+                        grid-row-start: 2;
+                        grid-row-end: 3;
+                    }
+                    position: relative;
+                    overflow: hidden;
+                    img{
+                        position: absolute;
+                    } 
+                    .content{
+                        padding: 1rem;
+                        @include flex (center, space-between, column);
+                        .name{
+                            width: 100%;
+                            display: flex;
+                            flex-direction: column;
+                            gap: 0.5rem;
+                            position: relative;
+                            z-index: 3;
+                            .content-info{
+                                display: flex;
+                                flex-direction: row;
+                                img{
+                                    position: relative;
+                                    z-index: 3;
+                                    width: 2rem;
+                                    height: 2rem;
+                                    border-radius: 0.5rem;
+                                    margin: 0 0.5rem 0 0;
+                                }
+                                .text-info{
+                                    h3{
+                                        font-size: 0.6rem;
+                                        color: #fff;
+                                        text-transform: capitalize;
+                                        text-align: center;
+                                    }
+                                    p{
+                                        font-size: 0.5rem;
+                                        color: #fff;
+                                        margin-top: -0.5rem;
+                                    }
+                                }
+                            }
+                            .duration{
+                                width: fit-content;
+                                padding: 0.125rem 0.25rem;
+                                border-radius: 0.5rem;
+                                background-color: $linkColor;
+                                color: #fff;
+                                font-size: 0.75rem;
+                                font-weight: 700;
+                                filter: blur(0.25px);
+                            }
+                            a{
+                                width: 4rem;
+                                height: fit-content;
+                                padding: 0.5rem 1rem;
+                                position: relative;
+                                z-index: 3;
+                                text-align: center;
+                                color: #fff;
+                                font-size: 0.75rem;
+                                font-weight: 600;
+                                background-color: #E3278F;
+                                border-radius: 1rem;
+                                bottom: 75%;
+                                left: 75%;
+                                @media (max-width: 800px) {
+                                    buttom: 75%;
+                                    left: 60%;
+                                }
+                            }
+                        }
+                    }
+                }
+                .box3{
+                    grid-column-start: 2;
+                    grid-column-end: 3;
+                    grid-row-start: 2;
+                    grid-row-end: 3;
+                    @media (max-width: 530px) {
+                        grid-column-start: 1;
+                        grid-column-end: 2;
+                        grid-row-start: 3;
+                        grid-row-end: 4;
+                    }
+                    position: relative;
+                    overflow: hidden;
+                    img{
+                        position: absolute;
+                    } 
+                    &::before{
+                        content: "";
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        background-image: linear-gradient(to bottom, #D45400, transparent);
+                        z-index: 2;
+                        opacity: 0.8;
+                    }
+                    .content{
+                        padding: 1rem;
+                        @include flex (center, space-between, column);
+                        .name{
+                            width: 100%;
+                            display: flex;
+                            flex-direction: column;
+                            gap: 0.5rem;
+                            position: relative;
+                            z-index: 3;
+                            .content-info{
+                                display: flex;
+                                flex-direction: row;
+                                img{
+                                    position: relative;
+                                    z-index: 3;
+                                    width: 2rem;
+                                    height: 2rem;
+                                    border-radius: 0.5rem;
+                                    margin: 0 0.5rem 0 0;
+                                }
+                                .text-info{
+                                    h3{
+                                        font-size: 0.6rem;
+                                        color: #fff;
+                                        text-transform: capitalize;
+                                        text-align: center;
+                                    }
+                                    p{
+                                        font-size: 0.5rem;
+                                        color: #fff;
+                                        margin-top: -0.5rem;
+                                    }
+                                }
+                            }
+                            .duration{
+                                width: fit-content;
+                                padding: 0.125rem 0.25rem;
+                                border-radius: 0.5rem;
+                                background-color: $linkColor;
+                                color: #fff;
+                                font-size: 0.75rem;
+                                font-weight: 700;
+                                filter: blur(0.25px);
+                            }
+                            a{
+                                width: 4rem;
+                                height: fit-content;
+                                padding: 0.5rem 1rem;
+                                position: absolute;
+                                z-index: 3;
+                                text-align: center;
+                                color: #fff;
+                                font-size: 0.75rem;
+                                font-weight: 600;
+                                background-color: #D45400;
+                                border-radius: 1rem;
+                                bottom: 75%;
+                                left: 75%;
+                                @media (max-width: 800px) {
+                                    buttom: 75%;
+                                    left: 60%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

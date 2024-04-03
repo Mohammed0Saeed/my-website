@@ -1,0 +1,357 @@
+@import url("https://fonts.googleapis.com/css2?family=MuseoModerno:wght@100;200;300;400;500;600;700;800;900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Varela+Round&display=swap");
+* {
+  margin: 0;
+  font-family: "system-ui";
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #F2EDD0;
+}
+
+header {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #404040;
+}
+header .logo {
+  font-size: 30px;
+  color: #fff;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-family: "MuseoModerno", cursive;
+  margin-left: 10%;
+}
+header .manu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10%;
+}
+header .manu a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 400;
+  font-size: 20px;
+  margin-left: 2rem;
+  text-transform: capitalize;
+  padding: 30px 15px;
+  transition: 0.3s ease;
+}
+header .manu a:hover {
+  background-color: #F2EDD0;
+  color: #000;
+}
+
+main {
+  width: 100%;
+  align-self: center;
+}
+main .preview {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  margin: 5% 10%;
+}
+main .preview .preview-text {
+  width: 40%;
+}
+main .preview .preview-text h2 {
+  font-size: 40px;
+  font-weight: 700;
+}
+main .preview .preview-text h4 {
+  margin-top: 5%;
+  font-size: 20px;
+  font-weight: 400;
+}
+main .preview .preview-text h4 span {
+  font-weight: 700;
+}
+main .preview .preview-illustrations {
+  width: 400px;
+  height: 400px;
+  position: relative;
+}
+main .projects {
+  width: 100%;
+  height: 160vh;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+main .projects h2 {
+  color: #000;
+  font-size: 50px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  align-self: flex-start;
+  margin-left: 10%;
+  margin-bottom: 3%;
+}
+main .projects .grid {
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(3, 78%/3);
+  grid-template-rows: repeat(2, 60vh);
+  -moz-column-gap: 1%;
+       column-gap: 1%;
+  row-gap: 2vh;
+}
+main .projects .grid .box1 {
+  border-radius: 20px;
+  background-color: #eee;
+  position: relative;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  overflow: hidden;
+  transition: 0.5s ease;
+}
+main .projects .grid .box1:hover {
+  margin: 10px;
+}
+main .projects .grid .box1:hover img {
+  width: 250%;
+}
+main .projects .grid .box1 img {
+  width: 200%;
+  position: absolute;
+  z-index: 1;
+  transition: 0.5s ease;
+}
+main .projects .grid .box1 .opacity-layer {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  height: 60vh;
+  background-color: #000;
+  opacity: 0.5;
+}
+main .projects .grid .box1 h3 {
+  position: absolute;
+  z-index: 3;
+  color: #fff;
+  left: 5%;
+  bottom: 10%;
+  font-size: 30px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+main .projects .grid .box2 {
+  border-radius: 20px;
+  background-color: #eee;
+  position: relative;
+  grid-column-start: 2;
+  grid-column-end: 4;
+  overflow: hidden;
+  transition: 0.5s ease;
+}
+main .projects .grid .box2:hover {
+  margin: 10px;
+}
+main .projects .grid .box2:hover img {
+  width: 150%;
+}
+main .projects .grid .box2 img {
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  transition: 0.5s ease;
+}
+main .projects .grid .box2 .opacity-layer {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  height: 60vh;
+  background-color: #000;
+  opacity: 0.5;
+}
+main .projects .grid .box2 h3 {
+  position: absolute;
+  z-index: 3;
+  color: #fff;
+  left: 5%;
+  bottom: 10%;
+  font-size: 30px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+main .projects .grid .box3 {
+  border-radius: 20px;
+  background-color: #eee;
+  position: relative;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  overflow: hidden;
+  transition: 0.5s ease;
+}
+main .projects .grid .box3:hover {
+  margin: 10px;
+}
+main .projects .grid .box3:hover img {
+  width: 150%;
+}
+main .projects .grid .box3 img {
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  transition: 0.5s ease;
+}
+main .projects .grid .box3 .opacity-layer {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  height: 60vh;
+  background-color: #000;
+  opacity: 0.5;
+}
+main .projects .grid .box3 h3 {
+  position: absolute;
+  z-index: 3;
+  color: #fff;
+  left: 5%;
+  bottom: 10%;
+  font-size: 30px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+main .projects .grid .box4 {
+  border-radius: 20px;
+  background-color: #eee;
+  position: relative;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  grid-column-start: 3;
+  grid-column-end: 4;
+  overflow: hidden;
+  transition: 0.5s ease;
+}
+main .projects .grid .box4:hover {
+  margin: 10px;
+}
+main .projects .grid .box4:hover img {
+  width: 250%;
+}
+main .projects .grid .box4 img {
+  width: 200%;
+  position: absolute;
+  z-index: 1;
+  transition: 0.5s ease;
+}
+main .projects .grid .box4 .opacity-layer {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  height: 60vh;
+  background-color: #000;
+  opacity: 0.5;
+}
+main .projects .grid .box4 h3 {
+  position: absolute;
+  z-index: 3;
+  color: #fff;
+  left: 5%;
+  bottom: 10%;
+  font-size: 30px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+main .our-services {
+  width: 100%;
+  height: 120vh;
+  background-color: #79c7d9;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+main .our-services h2 {
+  color: #fff;
+  font-size: 50px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-left: 10%;
+}
+main .our-services .services {
+  width: 80%;
+  align-self: center;
+  margin: 5% 10%;
+  display: grid;
+  grid-template-columns: repeat(3, 32%);
+  grid-template-rows: repeat(1, 60vh);
+  -moz-column-gap: 2.5%;
+       column-gap: 2.5%;
+  row-gap: 5vh;
+}
+main .our-services .services div {
+  background-color: #fff;
+  height: 60vh;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  transition: 0.5s ease;
+  border-bottom: solid #F2EDD0 0px;
+  border-top: solid #F2EDD0 0px;
+  cursor: default;
+}
+main .our-services .services div:hover {
+  padding: 5% 0;
+  border-bottom: solid #F2EDD0 10px;
+  border-top: solid #F2EDD0 10px;
+}
+main .our-services .services div h3 {
+  font-size: 25px;
+  text-transform: capitalize;
+}
+main .our-services .services div h5 {
+  width: 60%;
+  height: 20vh;
+  text-align: center;
+  font-weight: 500;
+  font-size: 15px;
+}
+main .our-services .services div a {
+  padding: 10px 30px;
+  margin-bottom: 4%;
+  background-color: #000;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 10px;
+}
+
+footer {
+  width: 100%;
+  height: 40vh;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+footer .social-media-links {
+  display: flex;
+  width: 20%;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+footer a {
+  width: 10%;
+  margin-bottom: 5%;
+}
+footer span {
+  font-family: "MuseoModerno", cursive;
+  font-size: 25px;
+  font-weight: 400;
+}/*# sourceMappingURL=home.css.map */

@@ -1,0 +1,46 @@
+@mixin flex($align, $justify, $direction){
+    display: flex;
+    align-items: $align;
+    justify-content: $justify;
+    flex-direction: $direction;
+}
+
+@mixin titles {
+        @include flex(center, space-between, row);
+        h3{
+            font-size: 1.25rem;
+            font-weight: 700;
+            text-transform: capitalize;
+            span{
+                font-weight: 400;
+                color: #767474;
+            }
+        }
+        .more{
+            width: 0.4rem;
+            height: 0.4rem;
+            border-radius: 50%;
+            background: $textBackgroundColor;
+            position: relative;
+            transform: translate(-1rem, 0rem);
+            cursor: pointer;
+            &::before{
+                content: "";
+                width: 0.4rem;
+                height: 0.4rem;
+                position: absolute;
+                left: -0.75rem;
+                border-radius: 50%;
+                background: $textBackgroundColor;
+            }
+            &::after{
+                content: "";
+                width: 0.4rem;
+                height: 0.4rem;
+                position: absolute;
+                left: 0.75rem;
+                border-radius: 50%;
+                background: $textBackgroundColor;
+            }
+        }
+}

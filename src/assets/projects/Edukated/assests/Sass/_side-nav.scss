@@ -1,0 +1,206 @@
+@import "../Sass/mixins";
+@import "../Sass/variables";
+
+nav{
+    @include flex(center, space-evenly, column);
+    width: 20%;
+    height: 100vh;
+    border-right: solid $backgroundColor 2.5px;
+    position: fixed;
+    background-color:#fff;
+    @media (max-width: 950px) {
+        display: none;
+    }
+
+    // logo textstyling
+    .logo{
+        width: 80%;
+        @include flex(center, flex-start, row);
+        img{
+            width: 30%;
+            transform: scale(0.75);
+        }
+        h2{
+            font-size: 1.125rem;
+            font-weight: 700;
+            text-transform: capitalize;
+            letter-spacing: 0.025rem;
+            span{
+                color: $linkColor;
+                font-weight: 500;
+            }
+        }
+    }
+
+    // navigation bar styling
+    .navigation-bar{
+        width: 80%;
+        @include flex(center, center, column);
+        gap: 1rem;
+        .container-A{
+            width: 100%;
+            height: max-content;
+            background-color: $backgroundColor;
+            border-radius: 1rem;
+            a{
+                @include flex(center, flex-start, row);
+                font-size: 1rem;
+                text-transform: capitalize;
+                font-weight: 600;
+                transition: 0.5s ease;
+                color: $textBackgroundColor;
+                img{
+                    width: 25%;
+                    transform: scale(0.35);
+                    transition: 0.5s ease;
+                    filter: invert(97%) sepia(0%) saturate(3847%) hue-rotate(100deg) brightness(82%) contrast(70%);
+                }
+                &::before{
+                    content: "";
+                    position: absolute;
+                    width: 0rem;
+                    height: 0rem;
+                    transition: 0.5s ease;
+                }
+                &:hover{
+                    color: #000;
+                    &::before{
+                        content:"";
+                        position: absolute;
+                        width: 0.25rem;
+                        height: 2rem;
+                        border-radius: 1rem;
+                        left: 1.75rem;
+                        background-color: $textBackgroundColor;
+                    }
+                    @media (max-width: 1050px){
+                        &::before{
+                            content:"";
+                            position: absolute;
+                            width: 0.25rem;
+                            height: 0.25rem;
+                            border-radius: 50%;
+                            left: 1.5rem;
+                            background-color: $textBackgroundColor;
+                        } 
+                    }
+                    img{
+                        filter: invert(42%) sepia(63%) saturate(2777%) hue-rotate(344deg) brightness(99%) contrast(96%);
+                    }
+                }
+            }
+            .main{
+                color: #000;
+                &::before{
+                    content:"";
+                    position: absolute;
+                    width: 0.25rem;
+                    height: 2rem;
+                    border-radius: 1rem;
+                    left: 1.75rem;
+                    background-color: $textBackgroundColor;
+                }
+                @media (max-width: 1050px){
+                    &::before{
+                        content:"";
+                        position: absolute;
+                        width: 0.25rem;
+                        height: 0.25rem;
+                        border-radius: 50%;
+                        left: 1.5rem;
+                        background-color: $textBackgroundColor;
+                    } 
+                }
+                img{
+                    filter: invert(42%) sepia(63%) saturate(2777%) hue-rotate(344deg) brightness(99%) contrast(96%);
+                }
+            }
+        }
+        .container-B{
+            width: 100%;
+            height: 4rem;
+            padding: 1rem;
+            background-color: $backgroundColor;
+            border-radius: 1rem;
+            @include flex(center, flex-start, row);
+            gap: 1rem;
+            cursor: default;
+            .img-container{
+                width: 25%;
+                transform: scale(0.75);
+                border-radius: 0.5rem;
+                background-color: #8F12FE;
+                img{
+                    width: 100%;
+                    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(111deg) brightness(107%) contrast(102%);
+                    transform: scale(0.65);
+                }
+            }
+            .text-info{
+                h3{
+                    font-size: 1rem;
+                    text-transform: capitalize;
+                    @media (max-width: 1300px) {
+                        font-size: 0.75rem;
+                    }
+                    @media (max-width: 1100px) {
+                        font-size: 0.6rem;
+                    }
+                }
+                p{
+                    font-weight: 600;
+                    color: $subsidedTextColor;
+                    @media (max-width: 1100px) {
+                        font-size: 0.5rem;
+                    }
+                }
+            }
+        }
+    }
+    .profile-info{
+        width: 80%;
+        height: max-content;
+        @include flex(center, center, column);
+        gap: 1rem;
+        cursor: default;
+        &:hover{
+            cursor: pointer;
+        }
+        .points{
+            @include flex(center, space-between, row);
+            gap: 1rem;
+            .scores, .progress{
+                width: calc(90% / 2);
+                background: $backgroundColor;
+                padding: 1rem;
+                border-radius: 1rem;
+                img{
+                    width: 50%;
+                    margin: 0 0 1rem 0;
+                }
+                .text-info{
+                    h3{
+                        font-size: 1rem;
+                        text-transform: capitalize;
+                    }
+                    p{
+                        margin: 0.5rem 0 0 0;
+                        font-weight: 600;
+                        color: $subsidedTextColor;
+                    }
+                }
+            }
+            .scores{
+                img{
+                    filter: invert(83%) sepia(14%) saturate(1257%) hue-rotate(73deg) brightness(88%) contrast(90%);
+                }
+            }
+            .progress{
+                img{
+                    width: 35%;
+                    filter: invert(64%) sepia(53%) saturate(300%) hue-rotate(281deg) brightness(81%) contrast(90%);
+                }
+            }
+        }
+    }
+}

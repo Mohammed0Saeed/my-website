@@ -1,0 +1,250 @@
+*{
+    font-family: "system-ui";
+    margin: 0;
+}
+
+/* beginning of header styling*/
+header{
+    display: flex;
+    justify-content: space-between;
+    margin: 2% 10%; 
+}
+
+header div{
+    display: flex;
+}
+
+header a{
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+    text-transform: capitalize;
+    font-size: 0.9em;
+    margin-left: 2rem;
+    margin-top: 3%;
+}
+
+.left-size-bar img{
+    margin-right: 2rem;
+    margin-top: -2% !important; 
+}
+
+.left-size-bar a{
+    margin-left: -5%;
+}
+
+.categories-items-icon{
+    width: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 3%;
+}
+
+.categories-items-icon, .left-size-bar a{
+    margin-right: 2rem;
+}
+/* End of header styling*/
+
+/* Start of main body styling*/
+/* Start of green block*/
+main{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.search-box{
+    width: 80%;
+    height: 400px;
+    background-image: linear-gradient(to right bottom, #9FBEB9, #ffffff);
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.search-box h3{
+    margin-left: 10%;
+    font-size: 30px;
+}
+
+.search-box h4{
+    font-weight: 400;
+    font-size: 30px;
+    margin-left: 10%;
+    margin-top: 1%;
+}
+
+.search-box input{
+    width: 30%;
+    margin-left: 10%;
+    margin-top: 2%;
+    padding: 10px 20px;
+    border-radius: 30px;
+    outline: none;
+    border: none;
+}
+
+.search-box img{
+    position: absolute;
+    width: 30%;
+    margin-left: 45%;
+}
+/*End of green box*/
+
+/*start of category box*/
+.pre-category{
+    display: flex;
+    width: 80%;
+    margin-top: 2%;
+    justify-content: space-between;
+}
+
+.pre-category div{
+    font-weight: 600; 
+}
+
+.pre-category a{
+    text-decoration: none;
+    color: #000000;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.category{
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+}
+
+.category div{
+    width: calc(90% / 10);
+    height: auto;
+    background-color: #FBFBFB;
+    margin-top: 5%;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px 0;
+    cursor: pointer;
+    transition: .5s ease;
+}
+
+.category div img{
+    width: 60%;
+    padding: 10px;
+}
+
+.seven img{
+    width: 30% !important;
+}
+
+.ten img{
+    width: 50% !important;
+}
+
+.category div h3{
+    padding: 10px;
+    font-size: 14px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.category div:hover{
+    margin-top: 2%;
+    padding: 30px 10px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px 10px #ddd;
+}
+
+/*End of category box*/
+/*start of most popular items box*/
+
+.pre-most-popular{
+    display: flex;
+    width: 80%;
+    margin-top: 5%;
+    justify-content: space-between;
+}
+
+.pre-most-popular div{
+    font-weight: 600; 
+}
+
+.pre-most-popular a{
+    text-decoration: none;
+    color: #000000;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.most-popular{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: auto;
+    margin-top: 5%;
+}
+
+.most-popular .layer-one{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.most-popular .layer-one div{
+    width: calc(90% / 4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.most-popular .layer-one div img{
+    width: 100%;
+    box-shadow: 10px 10px 10px 0 #ddd;
+    border-radius: 10px;
+}
+
+.most-popular .layer-one div a{
+    text-decoration: none;
+    color: #000000;
+    margin-top: 5%;
+}
+/*End of most popular box*/
+/*End of main section*/
+
+/*Start of footer*/
+footer{
+    margin-top: 10%;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: #9FBEB9;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    height: auto;
+}
+
+.social-media{
+    text-align: center;
+    margin-left: -3%;
+}
+
+.social-media a img{
+    width: 2%;
+    padding: 20px 0;
+    margin-left: 2%;
+}
+
+.copyright h3{
+    color: #000000;
+    font-size: 20px;
+    font-weight: 400;
+    padding: 10px 0;
+}

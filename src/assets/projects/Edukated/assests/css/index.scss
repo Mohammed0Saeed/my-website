@@ -1,0 +1,14 @@
+// resetting styles for the website
+@import "../Sass/resetting";
+
+// mixins for the repeatable styles
+@import "../Sass/mixins";
+
+// side navigation bar styling sheet
+@import "../Sass/side-nav";
+
+// main section styling sheet
+@import "../Sass/main-section";
+@import "../Sass/main-header";
+@import "../Sass/main-course-set";
+@import "../Sass/side-course-set"; 
